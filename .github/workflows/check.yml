@@ -113,7 +113,7 @@ jobs:
             - name: Check
               uses: eskatos/gradle-command-action@v1
               with:
-                  arguments: check -PexcludeTests=org/rustPerformanceTests/** -Pkotlin.incremental=false --no-daemon
+                  arguments: :test --tests "org.rust.lang.core.resolve.RsStdlibResolveTest.test path to stdlib contains symlink" -Pkotlin.incremental=false --no-daemon
 
             - name: Check bundled Rust formatters
               if: matrix.os != 'windows-latest'
